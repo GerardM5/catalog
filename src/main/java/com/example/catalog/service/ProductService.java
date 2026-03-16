@@ -2,6 +2,7 @@ package com.example.catalog.service;
 
 import com.example.catalog.dto.CreateProductRequest;
 import com.example.catalog.dto.PageMetadataResponse;
+import com.example.catalog.dto.ProductExportFormat;
 import com.example.catalog.dto.ProductPageResponse;
 import com.example.catalog.dto.ProductResponse;
 import com.example.catalog.dto.ProductSearchRequest;
@@ -21,10 +22,16 @@ public class ProductService {
 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
+    private final ProductExportWriter productExportWriter;
 
-    public ProductService(ProductRepository productRepository, ProductMapper productMapper) {
+    public ProductService(
+            ProductRepository productRepository,
+            ProductMapper productMapper,
+            ProductExportWriter productExportWriter
+    ) {
         this.productRepository = productRepository;
         this.productMapper = productMapper;
+        this.productExportWriter = productExportWriter;
     }
 
     @Transactional(readOnly = true)
@@ -37,6 +44,12 @@ public class ProductService {
                 .toList());
         response.setPagination(toPageMetadata(productsPage));
         return response;
+    }
+
+    @Transactional(readOnly = true)
+    public ProductExportFile export(ProductSearchRequest request, Pageable pageable, ProductExportFormat format) {
+        ProductPageResponse response = search(request, pageable);
+        return productExportWriter.write(response.getContent(), format);
     }
 
     @Transactional(readOnly = true)
