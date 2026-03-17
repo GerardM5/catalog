@@ -49,7 +49,7 @@ public class ProductController {
     @GetMapping
     @Operation(
             summary = "Search products",
-            description = "Filters by any product field and supports pagination and sorting using page, size and sort query params."
+            description = "Supports free-text search plus numeric ranges and text filters using page, size and sort query params."
     )
     public ResponseEntity<ProductPageResponse> search(
             @ParameterObject @ModelAttribute ProductSearchRequest request,
@@ -61,7 +61,7 @@ public class ProductController {
     @GetMapping("/export")
     @Operation(
             summary = "Export products",
-            description = "Uses the same filters as product search. If page and size are omitted, exports all matching results; otherwise exports the requested page as csv or xlsx."
+            description = "Uses the same free-text, range and text filters as product search. If page and size are omitted, exports all matching results; otherwise exports the requested page as csv or xlsx."
     )
     public ResponseEntity<ByteArrayResource> export(
             @ParameterObject @ModelAttribute ProductSearchRequest request,

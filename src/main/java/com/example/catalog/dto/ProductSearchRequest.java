@@ -4,115 +4,44 @@ import java.math.BigDecimal;
 
 public class ProductSearchRequest {
 
-    private Long id;
-    private String referencia;
-    private String nombre;
-    private String descripcion;
-    private Long peso;
-    private Long volumen;
-    private String color;
-    private Long ancho;
-    private Long largo;
-    private Long alto;
-    private BigDecimal precio;
-    private String empresa;
+    private String search;
+    private BigDecimal minPrice;
+    private BigDecimal maxPrice;
     private String categoria;
+    private String empresa;
+    private String color;
     private String origenPdf;
+    private Long minAncho;
+    private Long maxAncho;
+    private Long minLargo;
+    private Long maxLargo;
+    private Long minPeso;
+    private Long maxPeso;
+    private Long minVolumen;
+    private Long maxVolumen;
 
-    public Long getId() {
-        return id;
+    public String getSearch() {
+        return search;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setSearch(String search) {
+        this.search = search;
     }
 
-    public String getReferencia() {
-        return referencia;
+    public BigDecimal getMinPrice() {
+        return minPrice;
     }
 
-    public void setReferencia(String referencia) {
-        this.referencia = referencia;
+    public void setMinPrice(BigDecimal minPrice) {
+        this.minPrice = minPrice;
     }
 
-    public String getNombre() {
-        return nombre;
+    public BigDecimal getMaxPrice() {
+        return maxPrice;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Long getPeso() {
-        return peso;
-    }
-
-    public void setPeso(Long peso) {
-        this.peso = peso;
-    }
-
-    public Long getVolumen() {
-        return volumen;
-    }
-
-    public void setVolumen(Long volumen) {
-        this.volumen = volumen;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Long getAncho() {
-        return ancho;
-    }
-
-    public void setAncho(Long ancho) {
-        this.ancho = ancho;
-    }
-
-    public Long getLargo() {
-        return largo;
-    }
-
-    public void setLargo(Long largo) {
-        this.largo = largo;
-    }
-
-    public Long getAlto() {
-        return alto;
-    }
-
-    public void setAlto(Long alto) {
-        this.alto = alto;
-    }
-
-    public BigDecimal getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(BigDecimal precio) {
-        this.precio = precio;
-    }
-
-    public String getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public void setMaxPrice(BigDecimal maxPrice) {
+        this.maxPrice = maxPrice;
     }
 
     public String getCategoria() {
@@ -123,11 +52,91 @@ public class ProductSearchRequest {
         this.categoria = categoria;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
     public String getOrigenPdf() {
         return origenPdf;
     }
 
     public void setOrigenPdf(String origenPdf) {
         this.origenPdf = origenPdf;
+    }
+
+    public Long getMinAncho() {
+        return minAncho;
+    }
+
+    public void setMinAncho(Long minAncho) {
+        this.minAncho = minAncho;
+    }
+
+    public Long getMaxAncho() {
+        return maxAncho;
+    }
+
+    public void setMaxAncho(Long maxAncho) {
+        this.maxAncho = maxAncho;
+    }
+
+    public Long getMinLargo() {
+        return minLargo;
+    }
+
+    public void setMinLargo(Long minLargo) {
+        this.minLargo = minLargo;
+    }
+
+    public Long getMaxLargo() {
+        return maxLargo;
+    }
+
+    public void setMaxLargo(Long maxLargo) {
+        this.maxLargo = maxLargo;
+    }
+
+    public Long getMinPeso() {
+        return minPeso;
+    }
+
+    public void setMinPeso(Long minPeso) {
+        this.minPeso = minPeso;
+    }
+
+    public Long getMaxPeso() {
+        return maxPeso;
+    }
+
+    public void setMaxPeso(Long maxPeso) {
+        this.maxPeso = maxPeso;
+    }
+
+    public Long getMinVolumen() {
+        return minVolumen;
+    }
+
+    public void setMinVolumen(Long minVolumen) {
+        this.minVolumen = minVolumen;
+    }
+
+    public Long getMaxVolumen() {
+        return maxVolumen;
+    }
+
+    public void setMaxVolumen(Long maxVolumen) {
+        this.maxVolumen = maxVolumen;
     }
 }
